@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <system.webServer>
+    <rewrite>
+      <rules>
+        <rule name="rule1" stopProcessing="true">
+          <match url="^(.*)$" />
+          <conditions>
+            <add input="{HTTP_HOST}" pattern="^ancasistencia\.com$" />
+          </conditions>
+          <action type="Redirect" url="https://ancasistencia.com/{R:1}" redirectType="Permanent" />
+        </rule>
+      </rules>
+    </rewrite>
+  </system.webServer>
+</configuration>
